@@ -5,52 +5,36 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"time"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/go-redis/redis"
 	"github.com/labstack/echo/v4"
 )
 
 //var ctx = context.Background()
-type Ulogin struct {
+type ulogin struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
 }
 
+//ESTRUCTURA DE LOGIN
+//ESTRUCTURA DE SERVICIO
+//IGUALANDO LA INTERFAZ DE SERVICIO A LA ESTRUCTURA
+var (
+	log ulogin
+	ser service
+	s   iservice = ser
+)
+
 func login(c echo.Context) error {
-	rdb := cache.Connect()
-	var log Ulogin
 
 	if err := c.Bind(&log); err != nil {
 		return c.JSON(500, &log)
 	}
 
-	fmt.Printf("Esta es el username %s y este la password %s \n", log.Username, log.Password)
-	val, err := rdb.HGet(log.Username, "password").Result()
-	if err == redis.Nil {
-		fmt.Printf("%s doesnt exists", log.Username)
-	} else if err != nil {
-		panic(err)
-	} else {
-		fmt.Println("password", val)
-	}
-
-	//Throws unauthorized error
-	if log.Password != val {
-		return echo.ErrUnauthorized
-	}
-	// Create token
-	token := jwt.New(jwt.SigningMethodHS256)
-
-	// Set claims
-	claims := token.Claims.(jwt.MapClaims)
-	claims["username"] = log.Username
-	claims["exp"] = time.Now().Add(time.Hour * 3).Unix()
-	// Generate encoded token and send it as response.
-	t, err := token.SignedString([]byte("secret"))
+	t, err := s.loginService(log)
+	// Throws unauthorized error
 	if err != nil {
-		return err
+		return echo.ErrUnauthorized
 	}
 
 	return c.JSON(http.StatusOK, map[string]string{
