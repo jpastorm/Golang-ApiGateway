@@ -1,9 +1,6 @@
 package auth
 
 import (
-	"api/pkg/cache"
-	"encoding/json"
-	"fmt"
 	"net/http"
 
 	"github.com/dgrijalva/jwt-go"
@@ -30,7 +27,11 @@ func login(c echo.Context) error {
 	if err := c.Bind(&log); err != nil {
 		return c.JSON(500, &log)
 	}
-
+	if log.Username == "" || log.Password == "" {
+		return c.JSON(http.StatusCreated, map[string]interface{}{
+			"Message": "Missing values",
+		})
+	}
 	t, err := s.loginService(log)
 	// Throws unauthorized error
 	if err != nil {
@@ -53,19 +54,16 @@ func restricted(c echo.Context) error {
 }
 
 func register(c echo.Context) error {
-	rdb := cache.Connect()
 	var u user
-	var userInterface map[string]interface{}
 	if err := c.Bind(&u); err != nil {
 		return c.JSON(500, &u)
 	}
-	ui, _ := json.Marshal(u)
-	json.Unmarshal(ui, &userInterface)
-
-	err := rdb.HMSet(u.Nickname, userInterface).Err()
-	if err != nil {
-		panic(err)
+	if u.Nickname == "" || u.Username == "" || u.Password == "" {
+		return c.JSON(http.StatusCreated, map[string]interface{}{
+			"Message": "Missing values",
+		})
 	}
-	fmt.Printf("el tipo es %T", &u)
-	return c.JSON(http.StatusCreated, &u)
+
+	res := s.registerService(u)
+	return c.JSON(http.StatusCreated, res)
 }

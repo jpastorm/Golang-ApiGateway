@@ -1,6 +1,7 @@
 package auth
 
 import (
+	"encoding/json"
 	"fmt"
 	"time"
 
@@ -9,6 +10,7 @@ import (
 
 type iservice interface {
 	loginService(log ulogin) (string, error)
+	registerService(u user) map[string]interface{}
 }
 
 type service struct {
@@ -33,4 +35,23 @@ func (s service) loginService(log ulogin) (string, error) {
 		return "", err
 	}
 	return t, nil
+}
+
+func (s service) registerService(u user) map[string]interface{} {
+
+	var userInterface map[string]interface{}
+
+	ui, _ := json.Marshal(u)
+	json.Unmarshal(ui, &userInterface)
+
+	err := s.createOne(u.Nickname, userInterface)
+	if err != nil {
+		return map[string]interface{}{
+			"status": 500,
+			"Error":  err,
+		}
+	}
+	return map[string]interface{}{
+		"data": &u,
+	}
 }

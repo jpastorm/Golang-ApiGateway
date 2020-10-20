@@ -7,13 +7,15 @@ import (
 	"github.com/go-redis/redis"
 )
 
-type findOneAttribute func(params ...string) map[string]string
-
+type findOneAttribute func(key, attribute string) string
+type createOne func(key string, i map[string]interface{}) error
 type irepository interface {
-	findOneAttribute(params ...string) map[string]string
+	findOneAttribute(key, attribute string) string
+	createOne(key string, i map[string]interface{}) error
 }
 type repository struct {
-	findOneRepository findOneAttribute
+	findOneRepository   findOneAttribute
+	createOneRepository createOne
 }
 
 //KEY SE REFIERE A LA LLAVE QUE CONTIENE LA COLECCION, EN ESTE CASO LA COLECCION COMPLETA TIENE
@@ -29,6 +31,15 @@ func (r repository) findOneAttribute(key, attribute string) string {
 		fmt.Println("Value", val)
 	}
 	return val
+}
+
+func (r repository) createOne(key string, i map[string]interface{}) error {
+	rdb := cache.Connect()
+	err := rdb.HMSet(key, i).Err()
+	if err != nil {
+		return fmt.Errorf("Error creating user")
+	}
+	return nil
 }
 
 // func (r repository) findOne(params ...string) map[string]string {
