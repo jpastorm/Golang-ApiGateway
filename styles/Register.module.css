@@ -1,0 +1,16 @@
+.wrapper{
+    margin-top: 1em;
+    width: 50%;
+
+}
+.font{
+    font-size: 1rem;
+}
+.background{
+    padding-bottom:10%;
+    background-color: #F0F2F5;
+}
+.link{
+    color:#1A82AE;
+    text-decoration: green;
+}
