@@ -1,5 +1,5 @@
-import Container from '../components/Container'
-import styles from '../styles/Register.module.css'
+import Container from '@components/Container'
+import styles from '@styles/Register.module.css'
 import Head from 'next/head'
 import axios from 'axios';
 import { useState } from 'react';

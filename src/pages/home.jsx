@@ -1,6 +1,6 @@
-import Container from '../components/Container'
+import Container from '@components/Container'
 import Head from 'next/head'
-import styles from '../styles/Profile.module.css'
+import styles from '@styles/Profile.module.css'
 const home = () => {
     return (
         <>
