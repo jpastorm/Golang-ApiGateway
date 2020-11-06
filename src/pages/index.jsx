@@ -1,17 +1,15 @@
-import Head from 'next/head'
+import Head from '@components/Head'
 import styles from '@styles/Home.module.css'
+import Navigation from '@components/Navigation'
 
-import Container from '@components/Container'
-import { faPhoneSquareAlt,faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
+import { faPhoneSquareAlt, faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Home() {
   return (
       <div>
-        <Head>
-        <title>Api Plagio -- index</title>
-        </Head>
-        <Container>
+        <Head title="Api Plagio -- index" />
+        <Navigation />
         <div className={styles.gradient}>
           <div className="d-flex flex-column justify-content-center text-center p-5">
            
@@ -178,7 +176,6 @@ export default function Home() {
           <p className="text-white">© 2020 - 2021 Plagio SAC</p>
         </div>
         </div>
-        </Container>
       </div>
   )
 }

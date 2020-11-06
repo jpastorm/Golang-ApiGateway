@@ -1,14 +1,12 @@
-import Container from '@components/Container'
-import Head from 'next/head'
+import Head from '@components/Head'
+import Navigation from '@components/Navigation'
+
 const docs = () => {
     return (
         <>
-        <Head>
-        <title>Api Plagio -- docs</title>
-        </Head>
-        <Container>
-          <h1>Docs</h1>
-        </Container>
+            <Head title="Api Plagio -- docs"/>
+            <Navigation />
+            <h1>Docs</h1>
         </>
     )
 }

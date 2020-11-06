@@ -1,14 +1,15 @@
-import Container from '@components/Container'
-import Head from 'next/head'
-const About=()=>{
+import Head from '@components/Head'
+import Navigation from '@components/Navigation'
+
+const About = () => {
     return (
         <>
-        <title>Api Plagio -- About</title>
-        <Container>
-          <h1>About us</h1>
-        </Container>
+            <Head title="Api Plagio -- About" />
+            <Navigation />
+            <h1>About us</h1>
         </>
         
     )
 }
-export default About;
+
+export default About

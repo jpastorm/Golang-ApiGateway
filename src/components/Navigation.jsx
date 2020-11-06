@@ -1,5 +1,6 @@
 import Link from 'next/link'
-const Navigation=()=>{
+
+const Navigation = () => {
     return (
        
         <nav className="navbar navbar-expand-lg navbar sticky-top navbar-light bg-light">

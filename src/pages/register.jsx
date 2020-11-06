@@ -1,13 +1,12 @@
-import Container from '@components/Container'
-import Head from 'next/head'
+import Head from '@components/Head'
 import styles from '@styles/Register.module.css'
+import Navigation from '@components/Navigation'
+
 const register = () => {
     return (
         <>
-        <Head>
-        <title>Api Plagio -- Register</title>
-        </Head>
-        <Container>
+        <Head title="Api Plagio -- Register" />
+        <Navigation />
             <div className={styles.background}>
         <div className="container d-flex justify-content-center">
             <div className={styles.wrapper}>
@@ -55,7 +54,6 @@ const register = () => {
         
         </div>
         </div>
-        </Container>
         
         </>
     )

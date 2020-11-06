@@ -1,8 +1,9 @@
-import Container from '@components/Container'
 import styles from '@styles/Register.module.css'
-import Head from 'next/head'
-import axios from 'axios';
-import { useState } from 'react';
+import Head from '@components/Head'
+import axios from 'axios'
+import { useState } from 'react'
+import Navigation from '@components/Navigation'
+
 const login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -18,10 +19,8 @@ const login = () => {
     }
     return (
         <>
-        <Head>
-        <title>Api Plagio -- login</title>
-        </Head>
-        <Container>
+        <Head title="Api Plagio -- login" />
+        <Navigation />
             <div className={styles.background}>
         <div className="container d-flex justify-content-center">
             <div className={styles.wrapper}>
@@ -69,9 +68,7 @@ const login = () => {
                 <p className={styles.font}>© 2020 - 2021 Plagio SAC</p></div>
         
         </div>
-        </div>
-        </Container>
-        
+        </div>        
         </>
     )
 }
