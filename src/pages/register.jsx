@@ -1,4 +1,5 @@
 import Head from '@components/Head'
+import Button from '@components/Button'
 import Navigation from '@components/Navigation'
 import styles from '@styles/Register.module.css'
 
@@ -40,7 +41,7 @@ const register = () => {
                                             <input type="password" className="form-control" id="contraseniados" placeholder="repite tu contraseña"/>                            
                                         </div>
                                     </div>
-                                    <button className="btn btn-info btn-block">Registrarse</button>
+                                    <Button block color="blue">Registrarse</Button>
                                 </form>
                                 <br></br>
                                 <div>Al hacer clic en "Registrarse", 

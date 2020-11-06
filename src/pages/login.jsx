@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 import Head from '@components/Head'
+import Button from '@components/Button'
 import Navigation from '@components/Navigation'
 import styles from '@styles/Register.module.css'
 
@@ -54,7 +55,7 @@ const login = () => {
                                             autoComplete="off"/>                            
                                         </div>                        
                                     </div>
-                                    <button className="btn btn-info btn-block">Iniciar sesión</button>
+                                    <Button block color="blue">Iniciar sesión</Button>
                                 </form>
                                 <br></br>
                                 <div>                            

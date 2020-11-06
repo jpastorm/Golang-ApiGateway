@@ -1,4 +1,5 @@
 import Head from '@components/Head'
+import Button from '@components/Button'
 import styles from '@styles/Home.module.css'
 import Navigation from '@components/Navigation'
 
@@ -16,7 +17,7 @@ export default function index() {
                     <h4 className={styles.fontp}>Funciona con distintos lenguajes de programacion y frameworks</h4>
                     <h4 className={styles.fontp}>Cors habilitado para hacer consultas desde front-end</h4>
                     <div className="mt-5">
-                        <button className="btn btn-primary">Comienza gratis</button>
+                        <Button color="black">Comienza gratis</Button>
                     </div>
                 </div>
             </div>
@@ -98,7 +99,7 @@ export default function index() {
                             </div>
                         </div>
                         <div className="card-footer bg-transparent">
-                            <button className="btn btn-success">Prueba gratis</button>
+                            <Button color="green">Prueba gratis</Button>
                         </div>
                     </div>
 
@@ -121,7 +122,7 @@ export default function index() {
                             </div>               
                         </div>          
                         <div className="card-footer bg-transparent">
-                            <button className="btn btn-success">INICIAR SESIÓN</button>
+                            <Button color="green">INICIAR SESIÓN</Button>
                         </div>
                     </div>
                     <div className="card mb-3 mr-5" id={styles.cardid}>
@@ -144,7 +145,7 @@ export default function index() {
                             </div>               
                         </div>          
                         <div className="card-footer bg-transparent">
-                            <button className="btn btn-success">INICIAR SESIÓN</button>
+                            <Button color="green">INICIAR SESIÓN</Button>
                         </div>
                     </div>
                 </div>
