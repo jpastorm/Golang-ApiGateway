@@ -15,24 +15,23 @@ const home = () => {
                         <a className="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
                         <a className="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
                     </div>
+
                     <div className="tab-content" id="v-pills-tabContent">
                         <div className="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                            loremasdasdasdddddddddddddddddddddddddddddloremasdasdasdddddddddddddddddddddddddddddloremasdas
-                            dasdddddddddddddddddddddddddddddloremasdasdasdddddddddddddddddddddddddddddloremasdasdasddddddddd
-                            dddddddddddddddddddd
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. In commodi similique voluptatibus, debitis animi odio dolores! Optio numquam odio laboriosam, ratione adipisci neque distinctio nulla labore soluta beatae enim cum.
                         </div>
+
                         <div className="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                            loremasdasdasdddddddddddddddddddddddddddddloremasdasdasdddddddddddddddddddddddddddddl
-                            oremasdasdasddddddddddddddddddddddddddddd
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia ea doloremque quaerat quos nulla repellat earum vero odio doloribus! Unde ex suscipit perspiciatis consequuntur! Alias reprehenderit temporibus repudiandae quod odio.
                         </div>
+
                         <div className="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                            loremasdasdasdddddddddddddddddddddddddddddloremasdasdasdddddddddddddddddddddd
-                            dddddddloremasdasdasddddddddddddddddddddddddddddd
-                            </div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia ea doloremque quaerat quos nulla repellat earum vero odio doloribus! Unde ex suscipit perspiciatis consequuntur! Alias reprehenderit temporibus repudiandae quod odio.
+                        </div>
+
                         <div className="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                            loremasdasdasdddddddddddddddddddddddddddddloremasdasdasdddddddddddddddddddddddddddd
-                            dloremasdasdasddddddddddddddddddddddddddddd
-                            </div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia ea doloremque quaerat quos nulla repellat earum vero odio doloribus! Unde ex suscipit perspiciatis consequuntur! Alias reprehenderit temporibus repudiandae quod odio.
+                        </div>
                     </div>
                 </div>
             </div>

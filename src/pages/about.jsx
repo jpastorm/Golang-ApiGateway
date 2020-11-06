@@ -1,7 +1,7 @@
 import Head from '@components/Head'
 import Navigation from '@components/Navigation'
 
-const About = () => {
+const about = () => {
     return (
         <>
             <Head title="Api Plagio -- About" />
@@ -12,4 +12,4 @@ const About = () => {
     )
 }
 
-export default About
+export default about
