@@ -76,10 +76,6 @@
     flex-direction: column;
 }
 
-.image {
-    display: flex;
-}
-
 .siderightp {
     width: 40%;
     margin-right: 2em;

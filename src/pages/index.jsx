@@ -1,4 +1,5 @@
 import Head from '@components/Head'
+import Image from '@components/Image'
 import Button from '@components/Button'
 import styles from '@styles/Home.module.css'
 import Navigation from '@components/Navigation'
@@ -27,7 +28,7 @@ export default function index() {
                 <h5 className={styles.fontpw}>Acceso a todos los tipos de consulta en un mismo servicio</h5>
                 <h5 className={styles.fontpw}>Una sola cuenta para múltiples dispositivos sin restricciones</h5>
                 <div className={styles.sideright}>
-                    <img src="/image1.png" width="400px" className={styles.image} />
+                    <Image name="searching" size="400" />
                     <div className={styles.siderightp}>
                         <p className={styles.fontws}>Repositorio de documentos</p>
                         <p>Servicio de repositorio de documentos en nuestros servidores</p>
@@ -71,7 +72,7 @@ export default function index() {
                     </div>
 
                     <div>
-                        <img src="/image2.png" width="600px"/>
+                        <Image name="reading-book" size="600" />
                     </div>
                 </div>
             </div>
