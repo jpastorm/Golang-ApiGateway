@@ -3,7 +3,8 @@ import { useState } from 'react'
 import Head from '@components/Head'
 import Button from '@components/Button'
 import Navigation from '@components/Navigation'
-import styles from '@styles/Register.module.css'
+import Background from '@segments/access/Background'
+import styles from '@styles/access.module.css'
 
 const login = () => {
     const [ email, setEmail ] = useState('')
@@ -23,60 +24,40 @@ const login = () => {
         <>
             <Head title="Api Plagio -- login" />
             <Navigation />
-            <div className={styles.background}>
-                <div className="container d-flex justify-content-center">
-                    <div className={styles.wrapper}>
-                        <div className="card mb-3">
-                            <div className="card-header bg-transparent">
-                                <strong>Iniciar sesión </strong>
+
+            <Background title="Iniciar sesión">
+                <div className="card-body text-dark">
+                    <form onSubmit={submitForm}>
+                        <div className="card-text">                        
+                            <div className="form-group">
+                                <label htmlFor="email">Email address</label>
+                                <input 
+                                type="email" 
+                                className="form-control" 
+                                id="email" 
+                                placeholder="Enter email" 
+                                onChange={e=>setEmail(e.target.value)}
+                                autoComplete="off"/>                            
                             </div>
-
-                            <div className="card-body text-dark">
-                                <form onSubmit={submitForm}>
-                                    <div className="card-text">                        
-                                        <div className="form-group">
-                                            <label htmlFor="email">Email address</label>
-                                            <input 
-                                            type="email" 
-                                            className="form-control" 
-                                            id="email" 
-                                            placeholder="Enter email" 
-                                            onChange={e=>setEmail(e.target.value)}
-                                            autoComplete="off"/>                            
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="contrasenia">Contraseña</label>
-                                            <input 
-                                            type="password" 
-                                            className="form-control" 
-                                            id="contrasenia" 
-                                            placeholder="ingresa tu contraseña" 
-                                            onChange={e=>setPassword(e.target.value)}
-                                            autoComplete="off"/>                            
-                                        </div>                        
-                                    </div>
-                                    <Button block color="blue">Iniciar sesión</Button>
-                                </form>
-                                <br></br>
-                                <div>                            
-                                    <a href="#" className={styles.link}> ¿Olvidaste tu contraseña?</a>.
-                                </div>
-                            </div>           
+                            <div className="form-group">
+                                <label htmlFor="contrasenia">Contraseña</label>
+                                <input 
+                                type="password" 
+                                className="form-control" 
+                                id="contrasenia" 
+                                placeholder="ingresa tu contraseña" 
+                                onChange={e=>setPassword(e.target.value)}
+                                autoComplete="off"/>                            
+                            </div>                        
                         </div>
+                        <Button block color="blue">Iniciar sesión</Button>
+                    </form>
+                    <br></br>
+                    <div>                            
+                        <a href="#" className={styles.link}> ¿Olvidaste tu contraseña?</a>.
                     </div>
-                </div>
-
-                <div className="container d-flex justify-content-center">
-                    <div className="text-center">
-                        <p>
-                            <a href='#' className={styles.link}>Términos y condiciones</a>
-                            <a href='#' className={styles.link}>Política de privacidad</a>
-                            <a href='#' className={styles.link}>Monitor</a>
-                        </p>
-                        <p className={styles.font}>© 2020 - 2021 Plagio SAC</p>
-                    </div>
-                </div>
-            </div>        
+                </div>  
+            </Background>
         </>
     )
 }

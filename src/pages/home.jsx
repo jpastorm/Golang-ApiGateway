@@ -1,5 +1,5 @@
 import Head from '@components/Head'
-import styles from '@styles/Profile.module.css'
+import styles from '@styles/home.module.css'
 import Navigation from '@components/Navigation'
 
 const home = () => {
